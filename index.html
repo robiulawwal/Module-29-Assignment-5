@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="styles/fun.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/04bb36218b.js" crossorigin="anonymous"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,132 +32,221 @@
             font-family: "Lexend", sans-serif;
 
         }
+
+        .glass {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
     </style>
 </head>
 
 <body class="lexend-font">
-    <header class="bg-[#F9F7F3]">
-        <nav class="container mx-auto flex justify-between py-6">
-            <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg">Blog</button>
-            <div class="flex gap-4 items-center">
-                <img src="./assets/logo.png" alt="">
-                <h3 class="text-bblack font-semibold text-xl">Donate Bangladesh</h3>
-            </div>
-            <div class="flex gap-4 items-center">
-                <img src="./assets/coin.png" alt="">
-                <h3 class="text-para font-medium text-xl">5500 BDT</h3>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <div class=" text-center mt-20 space-x-4 my-8">
-            <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg">Blog</button>
-
-            <button class="text-para font-semibold text-xl border-2  py-3 px-8 rounded-lg">History</button>
+    <header class="sticky top-0 glass">
+        <div class="bg-[#F9F7F3] ">
+            <nav class="container mx-auto flex justify-between py-3 lg:py-6">
+                <button id="blog-btn"
+                    class="text-bblack font-semibold lg:text-xl bg-parrot lg:py-3 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md">Blog</button>
+                <button id="home-btn"
+                    class="text-bblack font-semibold lg:text-xl bg-parrot hidden lg:py-3 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md">Home</button>
+                <div class="hidden lg:flex gap-4 items-center">
+                    <img src="./assets/logo.png" alt="">
+                    <h3 class="text-bblack font-semibold lg:text-xl">Donate Bangladesh</h3>
+                </div>
+                <div class="flex gap-2 lg:gap-4 items-center">
+                    <img src="./assets/coin.png" alt="">
+                    <h3 class="text-para font-medium lg:text-xl"><span id="balance">5500</span> BDT</h3>
+                </div>
+            </nav>
         </div>
+        <div id="two-button" class="text-center mt-8 lg:mt-12 mb-4 space-x-4">
+            <button id=""
+                class="text-bblack font-semibold border-2 lg:text-xl bg-parrot  lg:py-3 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md  ">Donation</button>
 
-        <div>
-            <!-- Open the modal using ID.showModal() method -->
-            <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
-            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <button id=""
+                class="font-semibold lg:text-xl border-2  lg:py-3 lg:px-8 lg:rounded-lg py-2 px-4 rounded-md  ">History</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- You can open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_4.showModal()">open modal</button>
+        <dialog id="my_modal_4" class="modal">
+            <div class="modal-box w-11/12 max-w-5xl">
+                <h3 class="text-lg font-bold">Hello!</h3>
+                <p class="py-4">Click the button below to close</p>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+        <!-- second  -->
+        <div class="">
+            <dialog id="my_modal_5" class="modal">
                 <div class="modal-box flex flex-col items-center gap-5">
                     <h3 class="text-4xl font-bold">Congratulation!</h3>
-                  
+
                     <img src="./assets/coin.png" alt="">
                     <p class="py-4">You have donated for humankind</p>
-                    <h3 class="text-bblack font-bold text-xl">Succesfully
+                    <h3 class="text-bblack font-bold lg:text-xl">Succesfully
                     </h3>
-                        <form method="dialog">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn">Close confirmation</button>
-                        </form>
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn cursor-pointer">Close confirmation</button>
+                    </form>
                 </div>
             </dialog>
         </div>
+        <section id="main-section" class="container mx-auto w-11/12 lg:w-4/5 space-y-8 mt-12">
+            <div class="grid lg:grid-cols-2 border-2 p-8 rounded-2xl gap-10">
+                <div><img class="w-full" src="./assets/noakhali.png" alt=""></div>
 
-        <section class="container mx-auto w-4/5 space-y-8">
-            <div class="flex border-2 p-8 rounded-2xl">
-                <div class="flex-1"><img src="./assets/noakhali.png" alt=""></div>
-                <div class="flex-1 flex flex-col justify-between">
+                <div class="flex flex-col gap-4 justify-around">
                     <div class="flex justify-center w-fit gap-2 items-center bg-bg py-2 px-4 rounded-lg">
                         <img src="./assets/coin.png" alt="">
-                        <h3 class="text-para font-medium text-base">0 BDT</h3>
+                        <h1>0</h1>
+                        <p>BDT</p>
                     </div>
-                    <h3 class="text-bblack font-bold text-xl">Donate for Flood at Noakhali, Bangladesh</h3>
-                    <p class="text-para font-light text-base"> The recent floods in Noakhali have caused significant
+                    <h3 class="text-bblack font-bold lg:text-xl">Donate for Flood at Noakhali, Bangladesh</h3>
+                    <p class="text-para font-light lg:text-base text-sm"> The recent floods in Noakhali have caused
+                        significant
                         damage to homes infrastructure. Your donation will help provide essential supplies and to those
                         affected by this disaster. Every contribution, big or small, makes difference. Please join us in
                         supporting the relief efforts and making a positive impact on the lives of those in need.</p>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
-                        Now</button>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
-                        Now</button>
-                </div>
-            </div>
-            <div class="flex border-2 p-8 rounded-2xl">
-                <div class="flex-1"><img src="./assets/feni.png" alt=""></div>
-                <div class="flex-1 flex flex-col justify-between">
-                    <div class="flex justify-center w-fit gap-2 items-center bg-bg py-2 px-4 rounded-lg">
-                        <img src="./assets/coin.png" alt="">
-                        <h3 class="text-para font-medium text-base">0 BDT</h3>
-                    </div>
-                    <h3 class="text-bblack font-bold text-xl">Donate for Flood Relief in Feni,Bangladesh</h3>
-                    <p class="text-para font-light text-base">The recent floods in Feni have devastated local
-                        communities, leading to severe disruption and loss. Your generous donation will help provide
-                        immediate aid, including food, clean water, and medical supplies, to those affected by this
-                        calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this
-                        disaster. Every contribution counts towards making a real difference. Please consider donating
-                        today to assist those in urgent need..</p>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
-                        Now</button>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
+                    <input id="input-one" type="text" placeholder="Write Donation Amount"
+                        class="input input-bordered w-full h-11 lg:h-16" />
+
+                    <button id="input-one-btn"
+                        class="text-bblack font-semibold lg:text-xl bg-parrot lg:py-5 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md w-full">Donate
                         Now</button>
                 </div>
             </div>
-            <div class="flex border-2 p-8 rounded-2xl">
-                <div class="flex-1"><img src="./assets/quota-protest.png" alt=""></div>
-                <div class="flex-1 flex flex-col justify-between">
+            <div class="grid lg:grid-cols-2 border-2 p-8 rounded-2xl gap-10">
+                <div><img class="w-full" src="./assets/feni.png" alt=""></div>
+
+                <div class="flex flex-col gap-4 justify-around">
+                    <div
+                        class="flex justify-center w-fit gap-2 items-center bg-bg py-2 px-4 rounded-lg text-para font-medium lg:text-base text-sm">
+                        <img src="./assets/coin.png" alt="">
+                        <h1>0</h1>
+                        <p>BDT</p>
+                    </div>
+                    <h3 class="text-bblack font-bold lg:text-xl">Donate for Flood at Noakhali, Bangladesh</h3>
+                    <p class="text-para font-light lg:text-base text-sm">Feni have devastated local communities, leading
+                        to severe disruption and loss. Your generous donation will help provide immediate aid, including
+                        food, clean water, and medical supplies, to those affected by this calamity. Together, we can
+                        offer crucial support and help rebuild lives in the aftermath of this disaster. Please consider
+                        donating today to assist those in urgent need.</p>
+                    <input type="text" placeholder="Write Donation Amount"
+                        class="input input-bordered w-full h-11 lg:h-16" />
+
+                    <button
+                        class="text-bblack font-semibold lg:text-xl bg-parrot lg:py-5 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md w-full">Donate
+                        Now</button>
+                </div>
+            </div>
+            <div class="grid lg:grid-cols-2 border-2 p-8 rounded-2xl gap-10">
+                <div><img class="w-full" src="./assets/quota-protest.png" alt=""></div>
+
+                <div class="flex flex-col gap-4 justify-around">
                     <div class="flex justify-center w-fit gap-2 items-center bg-bg py-2 px-4 rounded-lg">
                         <img src="./assets/coin.png" alt="">
-                        <h3 class="text-para font-medium text-base">0 BDT</h3>
+                        <h1>0</h1>
+                        <p>BDT</p>
                     </div>
-                    <h3 class="text-bblack font-bold text-xl">Aid for Injured in the Quota Movement</h3>
-                    <p class="text-para font-light text-base">The recent Quota movement has resulted in numerous
+                    <h3 class="text-bblack font-bold lg:text-xl">Aid for Injured in the Quota Movement</h3>
+                    <p class="text-para font-light lg:text-base text-sm">Quota movement has resulted in numerous
                         injuries and significant hardship for many individuals. Your support is crucial in providing
                         medical assistance, rehabilitation, and necessary supplies to those affected. By contributing,
                         you help ensure that injured individuals receive the care and support they need during this
-                        challenging time. Every donation plays a vital role in alleviating their suffering and aiding in
-                        their recovery. Please consider making a donation to support these brave individuals in their
+                        challenging time. Please consider making a donation to support these brave individuals in their
                         time of need.</p>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
-                        Now</button>
-                    <button class="text-bblack font-semibold text-xl bg-parrot  py-3 px-8 rounded-lg w-full">Donate
+                    <input type="text" placeholder="Write Donation Amount"
+                        class="input input-bordered w-full h-11 lg:h-16" />
+
+                    <button
+                        class="text-bblack font-semibold lg:text-xl bg-parrot lg:py-5 lg:px-8 lg:rounded-lg py-2 px-6 rounded-md w-full">Donate
                         Now</button>
                 </div>
             </div>
         </section>
-        <section class="container mx-auto w-4/5 space-y-6 hidden">
-            <div class="p-8 border-2  space-y-4 rounded-2xl">
-                <h3 class="text-bblack font-bold text-xl">96500 Taka is Donated for famine-2024 at Feni, Bangladesh</h3>
-                <p class="text-para font-light text-base">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-                    Time)</p>
+        <!-- hidden section  -->
+        <section id="history-section" class="hidden container mx-auto w-4/5 space-y-6">
+
+        </section>
+        <!-- Blog section  -->
+        <section id="blog-section" class="hidden container mx-auto w-11/12 lg:w-4/5 mt-12 space-y-3">
+            <h1 class="text-2xl mb-8 font-semibold text-black">Important FAQ ???</h1>
+            <div class="collapse static bg-gray-50">
+                <input type="radio" name="my-accordion-2" checked="checked" />
+                <div class="collapse-title static text-xl font-medium flex justify-between">
+                    <div class="">What is the document object Model (DOM) ?</div>
+                    <div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapse-content">
+                    <p>(DOM) is a programming interface for web documents. It represents the structure of a document as
+                        a tree of objects, allowing scripts to manipulate the content, structure, and style of web pages
+                        dynamically.</p>
+                </div>
             </div>
-            <div class="p-8 border-2 space-y-4 rounded-2xl">
-                <h3 class="text-bblack font-bold text-xl">96500 Taka is Donated for famine-2024 at Feni, Bangladesh</h3>
-                <p class="text-para font-light text-base">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-                    Time)</p>
+            <div class="collapse static bg-gray-50">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title static text-xl font-medium flex justify-between">
+                    <div class="">How do you select an element from the dom?
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapse-content">
+                    <p>To select an element from the DOM, you can use methods like getElementById, querySelector, or
+                        getElementsByClassName.</p>
+                </div>
             </div>
-            <div class="p-8 border-2 space-y-4 rounded-2xl">
-                <h3 class="text-bblack font-bold text-xl">15500 Taka is Donated for Aid for Injured in the Quota
-                    Movement, Bangladesh</h3>
-                <p class="text-para font-light text-base">Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-                    Time)</p>
+            <div class="collapse static bg-gray-50">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title static text-xl font-medium flex justify-between">
+                    <div class="">What is the deligation in the concepts of DOM? <br>
+                        And why
+                        it is usefull?</div>
+                    <div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapse-content static">
+                    <p>Reduces the number of event listeners, improving performance and memory usage.Simplifies code
+                        maintenance, especially in dynamic content scenarios, by handling events through a single point
+                        of management.</p>
+                </div>
+            </div>
+            <div class="collapse static bg-gray-50">
+                <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title static text-xl font-medium flex justify-between">
+                    <div class="">How to change eliment atribute using dom?
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="collapse-content">
+                    <p>To change an element's attribute using the DOM, we can use the setAttribute method or directly
+                        modify the attribute property of the element.</p>
+                </div>
             </div>
         </section>
     </main>
     <footer class="bg-[#F9F7F3] h-36 mt-20">
 
     </footer>
+    <script src="styles/donation.js"></script>
+    <script src="styles/reuse.js"></script>
 </body>
 
 </html>
