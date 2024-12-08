@@ -9,6 +9,7 @@ function getTheNumberById (id){
     const value = document.getElementById(id).innerText;
     return parseFloat(value);
 }
+
 function showModalS() {
     document.getElementById('my_modal_5').showModal();
 }

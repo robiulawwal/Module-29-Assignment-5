@@ -1,3 +1,4 @@
+// blog section js codes
 document.getElementById('blog-btn').addEventListener('click', function (event) {
     showById('blog-section');
     if (event.currentTarget.innerText === 'Blog') {
@@ -17,7 +18,7 @@ document.getElementById('blog-btn').addEventListener('click', function (event) {
         document.getElementById('two-button').classList.remove('hidden')
     }
 })
-
+// history section 
 const buttons = document.getElementById('two-button').children
 for (const button of buttons) {
     button.addEventListener('click', function () {
@@ -34,11 +35,11 @@ for (const button of buttons) {
         }
     })
 }
-// input validation and add money
+//modal
 function showModalS() {
     document.getElementById('my_modal_5').showModal();
 }
-
+// input validation and add money by looping the div container section
 const mainSection = document.getElementById('main-section').children;
 for (const card of mainSection) {
     card.children[1].children[4].addEventListener('click', function () {
@@ -55,10 +56,11 @@ for (const card of mainSection) {
                 alert('insupicient balance')
                 return
             }
-            console.log(typeof inputValue)
             document.getElementById('balance').innerText = myBalance - inputValue;
             card.children[1].children[0].children[1].innerText = dontaedStoreAmmount + inputValue;
             const donateText = card.children[1].children[1].innerText;
+            card.children[1].children[3].value = '';
+            //history section functionality starts herez
             const div = document.createElement('div');
             div.classList.add('p-8', 'border-2', 'rounded-2xl', 'space-y-4');
             div.innerHTML = `
@@ -66,6 +68,7 @@ for (const card of mainSection) {
                 <p class="text-para font-light lg:text-base text-sm"> Date: ${new Date()}</p>
             `;
             historySec.appendChild(div);
+            //history ends
             showModalS()
 
         }
@@ -75,6 +78,6 @@ for (const card of mainSection) {
 
     })
 }
-// history section functionality
+
 
 
