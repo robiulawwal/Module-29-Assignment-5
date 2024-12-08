@@ -52,6 +52,7 @@ for (const card of mainSection) {
         const dontaedStoreAmmount = parseFloat(card.children[1].children[0].children[1].innerText);
         const historySec = document.getElementById('history-section');
         if (!isNaN(inputValue) && typeof inputValue === 'number' && inputValue >= 1 && inputValue <= myBalance) {
+            console.log(inputValue)
             if (myBalance <= 0) {
                 alert('insupicient balance')
                 return
